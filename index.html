@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ARVO — courses et devises</title>
+<meta name="description" content="ARVO : préparez vos courses et convertissez vos devises en un instant.">
+<meta name="theme-color" content="#eef1f3">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="ARVO">
+<meta name="format-detection" content="telephone=no">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Figtree:wght@400;500;600;700;800&display=swap">
+<script>
+  // Applique le thème choisi avant le premier rendu pour éviter tout flash.
+  try {
+    var t = JSON.parse(localStorage.getItem('tempo.v2') || '{}').theme;
+    if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    document.documentElement.dataset.theme = t;
+  } catch (e) {}
+</script>
+</head>
+<body>
+<div id="root"></div>
+<noscript><p style="padding:24px;font-family:sans-serif">ARVO a besoin de JavaScript pour fonctionner.</p></noscript>
+<script type="module" src="/src/main.jsx"></script>
+</body>
+</html>
